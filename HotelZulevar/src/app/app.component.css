@@ -1,0 +1,22 @@
+#container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+#main-content {
+  background: white;
+  width: 77.1%;
+  border-radius: 14px;
+  height: auto;
+  margin-top: 0.5em;
+  margin-inline: 0.5em;
+}
+
+@media screen and (max-width: 540px) {
+
+  #main-content {
+    width: 100%;
+    height: auto;
+  }
+}

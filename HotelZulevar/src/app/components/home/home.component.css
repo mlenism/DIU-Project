@@ -1,0 +1,101 @@
+/* =============================== CONTENT ===============================*/
+
+#content {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  background: white;
+}
+
+#div-about-us {
+  width: 50%;
+  background: var(--color-caracteristico);
+  justify-self: center;
+  align-self: flex-end;
+  margin-top: 5%;
+  -webkit-border-top-left-radius: 14px;
+  -webkit-border-bottom-left-radius: 14px;
+  -moz-border-radius-topleft: 14px;
+  -moz-border-radius-bottomleft: 14px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+#divisor-about-us {
+  margin-left: 5%;
+}
+
+#about-us-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2em;
+  line-height: 2em;
+  color: white;
+  margin: 2%;
+}
+
+#about-us-info {
+  width: 70%;
+  height: auto;
+  align-self: center;
+  margin-top: 4%;
+}
+
+.about-us-info-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #003F63;
+}
+
+#div-google-maps {
+  width: 40%;
+  background: #EAAD39;
+  margin-top: 5%;
+  -webkit-border-top-right-radius: 14px;
+  -webkit-border-bottom-right-radius: 14px;
+  -moz-border-radius-topright: 14px;
+  -moz-border-radius-bottomright: 14px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+#divisor-google-maps {
+  margin-right: 5%;
+}
+
+.google-maps-text {
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2em;
+  line-height: 2em;
+  color: #003F63;
+  margin: 2%;
+}
+
+#google-maps {
+  margin-top: 2%;
+  width: 100%;
+  align-self: center;
+}
+
+@media screen and (max-width: 540px) {
+
+  #about-us-text {
+    font-size: 1em;
+  }
+
+  .about-us-info-text {
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  .google-maps-text {
+    font-size: 1em;
+  }
+}

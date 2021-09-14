@@ -1,0 +1,9 @@
+DROP TABLE receipt;
+DROP TABLE plan_reservation;
+DROP TABLE reservation;
+DROP TABLE room;
+DROP TABLE plan;
+DROP TABLE slide;
+DROP TABLE image;
+DROP TABLE reserver;
+DROP TABLE hotel;

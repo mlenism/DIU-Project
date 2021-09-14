@@ -1,0 +1,23 @@
+<div class="slideshow-container">
+  <div class="mySlides fade">
+      <img class="slide-img" src="assets/images/slides/frente.jpg"/>
+  </div>
+
+  <div class="mySlides fade">
+      <img class="slide-img" src="assets/images/slides/balcon.jpg"/>
+  </div>
+
+  <div class="mySlides fade">
+      <img class="slide-img" src="assets/images/slides/recepcion.jpg"/>
+  </div>
+
+  <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+  <a class="next" (click)="plusSlides(1)">&#10095;</a>
+
+  <div class="dot-position">
+      <span class="dot" (click)="currentSlide(1)"></span>
+      <span class="dot" (click)="currentSlide(2)"></span>
+      <span class="dot" (click)="currentSlide(3)"></span>
+  </div>
+
+</div>

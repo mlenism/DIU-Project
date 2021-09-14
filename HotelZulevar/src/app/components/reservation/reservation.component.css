@@ -1,0 +1,225 @@
+/* =============================== CONTENT ===============================*/
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+#content-info {
+  margin-top: 2%;
+}
+
+#div-our-instalations {
+  width: 90%;
+  background: var(--color-caracteristico);
+  justify-self: center;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+#our-instalations {
+  text-align: center;
+}
+
+#our-instalations-text {
+  margin: 20px;
+  color: #ffffff;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+#Reservation {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+#Reservation-data {
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  -webkit-box-shadow: 0px 7px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 7px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.div-form {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.form-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+}
+
+.form-text-date {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  height: 3em;
+}
+
+.form-text-data {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5em;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  height: 3em;
+  width: 100px;
+}
+
+.button-form {
+  background: #eaad39;
+  margin-top: 22%;
+  border-radius: 14px;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  text-align: center;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  height: 4vw;
+  cursor: pointer;
+
+  padding: 0.7vw;
+  text-align: center;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-size: 1.5vw;
+  color: #003f63;
+  text-decoration: none;
+}
+
+.button-form:hover {
+  background: #003f63;
+  height: 4vw;
+  color: white;
+}
+
+.button-form[disabled],
+.button-form:hover[disabled] {
+  background: #eaad399e;
+  color: #003f639e;
+}
+
+.pack-card {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+  #div-our-instalations {
+    width: 90%;
+    justify-self: center;
+    height: auto;
+  }
+
+  #our-instalations-text {
+    font-size: 1em;
+    color: #ffffff;
+  }
+
+  #Reservation {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  #Reservation-data {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .div-form {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-text {
+    margin: 5%;
+    font-size: 1em;
+    color: rgb(112, 112, 112);
+    text-align: center;
+  }
+
+  .form-text-date {
+    font-size: 1em;
+    height: auto;
+    align-self: center;
+  }
+
+  .form-text-data {
+    font-size: 1em;
+    color: rgb(112, 112, 112);
+    height: auto;
+    align-self: center;
+  }
+
+  .button-form {
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 3px;
+  }
+
+  .pack-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .button-form {
+    margin: 10%;
+    align-self: center;
+    justify-self: center;
+    border-radius: 14px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    height: auto;
+    cursor: pointer;
+
+    text-align: center;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #003f63;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .button-form {
+    height: 25px;
+    padding: 0px;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+}

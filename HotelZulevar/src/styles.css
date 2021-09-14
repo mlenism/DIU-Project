@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --color-caracteristico: rgb(0, 63, 99);
+}
+
+p,
+pre,
+label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  color: #505050;
+}
+
+h2 {
+  font-family: "Libre Baskerville", serif;
+  font-size: 31px;
+  color: #3e3f46;
+}
+
+ul,
+li {
+  display: inline;
+  width: 100%;
+}
+
+li {
+  margin: 5%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}

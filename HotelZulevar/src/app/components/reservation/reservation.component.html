@@ -1,0 +1,60 @@
+<div id="content">
+    <div id="div-our-instalations">
+        <div id="our-instalations">
+            <p id="our-instalations-text">Reserva</p>
+        </div>
+    </div>
+
+    <div id="Reservation">
+        <form id="Reservation-data" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="div-form">
+                <label class="form-text">Fecha de inicio</label>
+                <input type="date" id="data2" class="form-text-date" formControlName="startDate">
+            </div>
+            <div class="div-form">
+                <label class="form-text">Fecha de salida</label>
+                <input type="date" id="data4" class="form-text-date" formControlName="finishDate">
+            </div>
+            <div class="div-form">
+                <label class="form-text">Adultos</label>
+                <select class="form-text-data" formControlName="adults">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div class="div-form">
+                <label class="form-text">Niños</label>
+                <select class="form-text-data" formControlName="children">
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div class="div-form-button">
+                <button type="submit" class="button-form" [disabled]="form.invalid">
+                    RESERVAR
+                </button>
+            </div>
+        </form>
+    </div>
+    <app-pack-card *ngFor="let e of info" class="pack-card" name="{{e.name}}"
+    type="reservation" message="Habitación {{e.name}}
+
+Costo: {{e.cost}}
+
+Adultos: {{e.adults}}      Niños: {{e.children}}
+
+{{e.description}}"
+      img="{{e.image}}"></app-pack-card>
+</div>
+<app-slide *ngIf="!info.length"></app-slide>
