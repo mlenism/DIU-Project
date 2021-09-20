@@ -1,37 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
-import { TouristPacksComponent } from './components/tourist-packs/tourist-packs.component';
-import { RoomsComponent } from './components/rooms/rooms.component';
-import { ReservationComponent } from './components/reservation/reservation.component';
-import { ConfirmComponent } from './components/confirm/confirm.component'
-
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
   },
   {
-    path: 'nosotros',
-    component: AboutUsComponent
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'paquetes',
-    component: TouristPacksComponent
-  },
-  {
-    path: 'habitaciones',
-    component: RoomsComponent
-  },
-  {
-    path: 'reserva',
-    component: ReservationComponent
-  },
-  {
-    path: 'reserva/confirmacion',
-    component: ConfirmComponent
+    path: '**',
+    redirectTo: ''
   }
 ];
 

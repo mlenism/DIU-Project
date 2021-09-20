@@ -1,0 +1,23 @@
+<div id="content">
+  <div id="div-our-instalations">
+      <div id="our-instalations">
+          <p id="our-instalations-text">Paquetes turisticos</p>
+      </div>
+  </div>
+
+  <div #cards *ngFor="let e of info; let last = last" class="div-room">
+    <div class="room-img">
+        <img class="home-page-img" src="{{e.image}}" width="100%" height="200px">
+    </div>
+    <div id="div-line"> </div>
+    <div class="room-info">
+        <p *ngIf="!loggedIn"  class="room-info-text">{{e.name}}</p>
+        <pre *ngIf="!loggedIn" class="room-info-text">{{e.description}}</pre>
+        <input *ngIf="loggedIn" type="text" class="text-area-we-info" value="{{e.name}}">
+        <textarea *ngIf="loggedIn" class="text-area-we-info">{{e.description}}</textarea>
+    </div>
+    <div class="room-button">
+        <a (click)="confirm(e.name)" class="room-button-info">RESERVA AHORA</a>
+    </div>
+  </div>
+</div>

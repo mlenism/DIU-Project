@@ -1,0 +1,49 @@
+<div id="content">
+  <div id="div-our-instalations">
+      <div id="our-instalations">
+          <p id="our-instalations-text">Nuestras instalaciones</p>
+      </div>
+  </div>
+
+  <!-- Posible portada con slides al igual que en index -->
+  <div style="width: 100%; margin-top: 20px">
+      <img class="home-page-img" src="assets/images/aboutUs/recepcion.jpg" alt="Recepcion" width="100%" height="400">
+  </div>
+
+  <div id="content-info">
+      <div class="row">
+          <div class="column">
+              <img class="home-page-img"
+                  src="assets/images/aboutUs/fachada.jpg"
+                  alt="Smiley face" width="100%">
+          </div>
+          <div class="column">
+              <div class="div-we">
+                  <p class=div-we-text>Mision</p>
+              </div>
+              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.mission}}</textarea>
+              <pre *ngIf="!loggedIn" class="div-we-info">{{info.mission}}</pre>
+              <div class="div-we">
+                  <p class="div-we-text">Vision</p>
+              </div>
+              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.vision}}</textarea>
+              <pre *ngIf="!loggedIn" class="div-we-info">{{info.vision}}</pre>
+          </div>
+      </div>
+      <div class="row">
+          <div class="column">
+              <div class="div-we">
+                  <pre class="div-we-text">Nuestra historia</pre>
+              </div>
+              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.history}}</textarea>
+              <pre *ngIf="!loggedIn" class="div-we-info">{{info.history}}</pre>
+          </div>
+          <div class="column">
+              <img class="home-page-img"
+                  src="assets/images/aboutUs/entrada.jpg" alt="Smiley face"
+                  width="100%" height="500">
+          </div>
+      </div>
+  </div>
+
+</div>

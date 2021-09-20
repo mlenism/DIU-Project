@@ -1,0 +1,19 @@
+<header id="header">
+  <div id="WelcomeContent">
+      <figure id="logo">
+          <a routerLink="/">
+            <img id="logo-img" src="assets/images/logo.png" alt="Logo Hotel Zulevar" style="width: 100%; height: auto">
+          </a>
+          <figcaption></figcaption>
+      </figure>
+      <div id="navigation-bar">
+          <nav class="nav-bar">
+              <a routerLink="/nosotros" class="text-nav">Nosotros</a>
+              <a routerLink="/paquetes" class="text-nav">Paquetes turisticos</a>
+              <a routerLink="/habitaciones" class="text-nav">Habitaciones</a>
+              <a (click)="signOut()" class="text-nav" *ngIf="user">Cerrar sesión</a>
+              <a routerLink="/reserva" class="button-form">RESERVA AHORA</a>
+          </nav>
+      </div>
+  </div>
+</header>

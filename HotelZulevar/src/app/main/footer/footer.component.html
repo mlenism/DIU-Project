@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="footer-group">
+      <div class="footer-item-list">
+          <p class="item-p">Ubicacion</p>
+          <p class="item-p">Carrera 8 No. 10-13<br>
+              Calima - El Darién<br>
+              Valle del Cauca, Colombia</p>
+      </div>
+  </div>
+  <div class="footer-group">
+      <div class="footer-item-list">
+          <p class="item-p">Siguenos</p>
+          <ul class="footer-ul">
+              <li>
+                  <a href="#" class="fa fa-facebook icon-size" style="color:#003F63;"></a>
+              </li>
+              <li>
+                  <a href="#" class="fa fa-instagram icon-size" style="color:#D3A13D;"></a>
+              </li>
+              <li>
+                  <a href="#" class="fa fa-whatsapp icon-size" style="color:#003F63;"></a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-group">
+      <div class="footer-item-list">
+          <p class="item-p">Contacto</p>
+          <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info-footer">{{info.contact}}</textarea>
+          <pre *ngIf="!loggedIn" class="item-p">{{info.contact}}</pre>
+      </div>
+  </div>
+</footer>
