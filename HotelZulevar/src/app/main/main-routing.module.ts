@@ -5,8 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TouristPacksComponent } from './tourist-packs/tourist-packs.component';
 import { RoomsComponent } from './rooms/rooms.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { ConfirmComponent } from './confirm/confirm.component';
 import { MainComponent } from './main.component';
 
 const routes: Routes = [
@@ -29,17 +27,13 @@ const routes: Routes = [
       {
         path: 'habitaciones',
         component: RoomsComponent,
-      },
-      {
-        path: 'reserva',
-        component: ReservationComponent
-      },
-      {
-        path: 'reserva/confirmacion',
-        component: ConfirmComponent
       }
     ]
-  }
+  },
+  {
+    path: 'reserva',
+    loadChildren: () => import('./reserve/reserve.module').then(m => m.ReserveModule)
+  },
 ];
 
 @NgModule({

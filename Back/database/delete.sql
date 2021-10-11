@@ -1,9 +1,23 @@
-DROP TABLE receipt;
-DROP TABLE plan_reservation;
-DROP TABLE reservation;
-DROP TABLE room;
-DROP TABLE plan;
-DROP TABLE slide;
-DROP TABLE image;
-DROP TABLE reserver;
-DROP TABLE hotel;
+DROP FUNCTION IF EXISTS create_select_room;
+DROP FUNCTION IF EXISTS create_select_plan;
+DROP FUNCTION IF EXISTS insert_reservation;
+DROP FUNCTION IF EXISTS update_img;
+DROP FUNCTION IF EXISTS delete_room;
+DROP FUNCTION IF EXISTS update_img_room;
+DROP FUNCTION IF EXISTS delete_reservation;
+DROP FUNCTION IF EXISTS update_img_plan;
+DROP FUNCTION IF EXISTS delete_plan;
+
+DROP TYPE IF EXISTS two_id;
+
+-- DROP TABLE IF EXISTS receipt;
+DROP TABLE IF EXISTS plan_reservation;
+DROP TABLE IF EXISTS reservation;
+DROP TABLE IF EXISTS room;
+DROP TABLE IF EXISTS plan;
+DROP TABLE IF EXISTS static_image;
+DROP TABLE IF EXISTS image;
+DROP TABLE IF EXISTS reserver;
+DROP TABLE IF EXISTS hotel;
+
+DROP EXTENSION IF EXISTS "pgcrypto";

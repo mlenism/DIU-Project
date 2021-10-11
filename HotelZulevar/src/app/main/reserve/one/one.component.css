@@ -1,0 +1,107 @@
+#div-date-info {
+  width: 80%;
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background: #c4c4c4;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+}
+
+#div-full-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: #c4c4c4;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  margin-bottom: 5%;
+}
+
+.item {
+  padding-left: 5%;
+}
+
+#div-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: auto;
+}
+
+#div-back-button a,
+#div-button a {
+  background: #eaad39;
+  border-radius: 14px;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  text-align: center;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 0.7vw;
+  text-align: center;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-size: 1.5vw;
+  color: #003f63;
+  text-decoration: none;
+}
+
+#div-button a:hover{
+  background: #d89e34;
+}
+
+#div-button a:active{
+  background: #ce9733;
+}
+
+#div-back-button {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+#div-back-button a {
+  width: 50%;
+  background: #003f63;
+  margin-bottom: 5%;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  #logo {
+    width: 20%;
+    align-self: center;
+  }
+
+  #WelcomeContent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #main-content {
+    width: 100%;
+    height: auto;
+  }
+
+  #WelcomeContent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+}

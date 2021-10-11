@@ -10,30 +10,28 @@ import { ReservationService } from '../services/reservation.service';
 
 import { MainRoutingModule } from './main-routing.module';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { ConfirmComponent } from './confirm/confirm.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { ReservationComponent } from './reservation/reservation.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { SlideComponent } from './slide/slide.component';
 import { TouristPacksComponent } from './tourist-packs/tourist-packs.component';
 import { MainComponent } from './main.component';
 import { InputListenerDirective } from '../directives/input-listener.directive';
+import { InputOnlyListenerDirective } from '../directives/input-only-listener.directive';
 
 @NgModule({
   declarations: [
     AboutUsComponent,
-    ConfirmComponent,
     FooterComponent,
     HomeComponent,
     NavigationComponent,
-    ReservationComponent,
     RoomsComponent,
     SlideComponent,
     TouristPacksComponent,
     MainComponent,
-    InputListenerDirective
+    InputListenerDirective,
+    InputOnlyListenerDirective
   ],
   imports: [
     CommonModule,
@@ -45,6 +43,9 @@ import { InputListenerDirective } from '../directives/input-listener.directive';
     TouristPacksService,
     RoomsService,
     ReservationService
+  ],
+  exports: [
+    SlideComponent
   ]
 })
 export class MainModule { }

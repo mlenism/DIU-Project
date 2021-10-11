@@ -11,7 +11,11 @@ class ResrevationR {
     }
 
     config() {
-        this.router.post('/', reservationC.insertInfo);
+        this.router.post('/', reservationC.insertInfo.bind(reservationC));
+        this.router.get('/', reservationC.getInfo);
+        this.router.get('/:id', reservationC.getInfoById);
+        this.router.get('/one/:id', reservationC.getOneInfoById);
+        this.router.delete('/:id', reservationC.deleteReservation);
     }
 }
 

@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="div-our-instalations">
+      <div class="our-instalations">
+          <p class="our-instalations-text">Sección de reservas</p>
+      </div>
+  </div>
+
+  <form [formGroup]="formu" (ngSubmit)="getInfoById()" class="div-search">
+      <label for="searchName" id="search-label">Buscar por nombre</label>
+      <input id="searchName" type="text" formControlName="name" placeholder="nombre">
+      <button id="search-button">Buscar</button>
+  </form>
+
+  <div *ngFor="let e of info" class="reservation-info">
+      <div class="reservation-info-text">
+          <p class="info-text">Nombre completo: {{e.name}}</p>
+          <p class="info-text">Fecha Ingreso: {{e.entrance}}</p>
+          <p class="info-text">Fecha Salida: {{e.departure}}</p>
+      </div>
+      <div class="button-div">
+          <button class="button-more" (click)="seeMore(e)">Ver mas</button>
+      </div>
+  </div>
+</div>

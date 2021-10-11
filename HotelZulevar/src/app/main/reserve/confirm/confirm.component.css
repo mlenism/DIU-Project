@@ -1,0 +1,211 @@
+/* =============================== CONTENT ===============================*/
+.row {
+  margin: unset;
+}
+
+/* ============================ DETAILS BLOCK ==============================*/
+
+.details-block {
+  background-color: #C3CACD;
+  height: 20em;
+  width: 95%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0.1em 0.2em 5px #aaaaaa;
+}
+
+.details-title {
+  color: var(--color-caracteristico);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+.details-text-space {
+  margin-bottom: 2em;
+}
+
+.details-text {
+  color: var(--color-caracteristico);
+}
+
+.div-line-vertical {
+  background-color: var(--color-caracteristico);
+  width: 0.2em;
+  margin: 2%;
+}
+
+.div-line-horizontal {
+  background-color: var(--color-caracteristico);
+  height: 0.1em;
+  width: 94%;
+}
+
+.align {
+  text-align: left;
+}
+
+.margin-left {
+  margin-left: 1em;
+}
+
+/* ========================== PERSONAL INFO BLOCK ==========================*/
+
+.form-compact {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.personal-info-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--color-caracteristico);
+}
+
+.personal-info-block {
+  height: 38em;
+  width: 95%;
+}
+
+.personal-info-content {
+  text-align: left;
+  width: 78%;
+  max-width: 78%;
+}
+
+.personal-info-label {
+  color: black;
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
+
+.personal-info-input {
+  background-color: #b0b7ba;
+  border-style: hidden;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  font-size: 0.9em;
+}
+
+.personal-info-input:focus {
+  outline: none;
+}
+
+.personal-info-input:focus,
+.personal-info-input:-webkit-autofill:hover,
+.personal-info-input:hover {
+  background-color: #bfc9cd;
+}
+
+.personal-info-input:-webkit-autofill {
+  /* -webkit-text-fill-color: var(--color-caracteristico); */
+  -webkit-box-shadow: 0 0 0 30px #b0b7ba inset;
+  box-shadow: 0 0 0 30px #b0b7ba inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.personal-info-input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px #bfc9cd inset;
+  box-shadow: 0 0 0 30px #bfc9cd inset;
+}
+
+.personal-info-submit {
+  padding-inline: 4em;
+  padding-block: 0.4em;
+  background: #eaad39;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.5vw;
+  margin-top: 2.8em;
+  color: var(--color-caracteristico);
+  cursor: pointer;
+}
+
+.personal-info-submit:hover {
+  background: #c49030;
+  color: black;
+}
+
+.personal-info-submit:active {
+  background: var(--color-caracteristico);
+  color: white;
+}
+
+.personal-info-submit[disabled],
+.personal-info-submit:hover[disabled],
+.personal-info-submit:active[disabled]
+  {
+  background: #c490309e;
+  color: #0000009e;
+  cursor: unset;
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  /* ======= DETAILS BLOCK ======== */
+  .details-block {
+    height: 43em;
+    margin-bottom: 3em;
+  }
+
+  .div-line-vertical {
+    background-color: unset;
+    width: unset;
+    margin: unset;
+  }
+
+  .div-line-horizontal {
+    background-color: unset;
+    height: unset;
+    width: unset;
+  }
+
+  .details-text-space {
+    margin-bottom: 0;
+  }
+
+  .details-text,
+  .details-title {
+    margin-bottom: 0px;
+  }
+
+  .align {
+    text-align: center;
+  }
+
+  .margin-left {
+    margin-left: 0;
+  }
+
+  /* ===== PERSONAL INFO BLOCK ===== */
+  .personal-info-block {
+    height: 48em;
+  }
+
+  .personal-info-row {
+    width: 85%;
+    align-content: center;
+    margin-left: 7%;
+  }
+
+  .personal-info-submit {
+    padding-block: 0.5em;
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .personal-info-submit {
+    font-size: 3.7vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .personal-info-submit {
+    font-size: 5vw;
+  }
+}

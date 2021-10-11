@@ -15,4 +15,20 @@ export class ReservationService {
   sendInfo(data: any): Observable<any> {
     return this.http.post(`${this.API_URI}`, data, {responseType: 'text'});
   }
+
+  getInfo(): Observable<any> {
+    return this.http.get(`${this.API_URI}`);
+  }
+
+  getInfoById(id: string): Observable<any> {
+    return this.http.get(`${this.API_URI}/${id}`);
+  }
+
+  getOneInfoById(id: string): Observable<any> {
+    return this.http.get(`${this.API_URI}/one/${id}`);
+  }
+
+  delete(id: string): Observable<any> {
+    return this.http.delete(`${this.API_URI}/${id}`);
+  }
 }

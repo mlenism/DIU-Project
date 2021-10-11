@@ -1,49 +1,105 @@
-<div id="content">
-  <div id="div-our-instalations">
-      <div id="our-instalations">
-          <p id="our-instalations-text">Nuestras instalaciones</p>
-      </div>
-  </div>
+<div class="content">
+    <div class="div-our-instalations">
+        <div class="our-instalations">
+            <p class="our-instalations-text">Nuestras instalaciones</p>
+        </div>
+    </div>
 
-  <!-- Posible portada con slides al igual que en index -->
-  <div style="width: 100%; margin-top: 20px">
-      <img class="home-page-img" src="assets/images/aboutUs/recepcion.jpg" alt="Recepcion" width="100%" height="400">
-  </div>
+    <ng-template *ngIf="loggedIn; then thenBlock else elseBlock"></ng-template>
 
-  <div id="content-info">
-      <div class="row">
-          <div class="column">
-              <img class="home-page-img"
-                  src="assets/images/aboutUs/fachada.jpg"
-                  alt="Smiley face" width="100%">
-          </div>
-          <div class="column">
-              <div class="div-we">
-                  <p class=div-we-text>Mision</p>
-              </div>
-              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.mission}}</textarea>
-              <pre *ngIf="!loggedIn" class="div-we-info">{{info.mission}}</pre>
-              <div class="div-we">
-                  <p class="div-we-text">Vision</p>
-              </div>
-              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.vision}}</textarea>
-              <pre *ngIf="!loggedIn" class="div-we-info">{{info.vision}}</pre>
-          </div>
-      </div>
-      <div class="row">
-          <div class="column">
-              <div class="div-we">
-                  <pre class="div-we-text">Nuestra historia</pre>
-              </div>
-              <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info">{{info.history}}</textarea>
-              <pre *ngIf="!loggedIn" class="div-we-info">{{info.history}}</pre>
-          </div>
-          <div class="column">
-              <img class="home-page-img"
-                  src="assets/images/aboutUs/entrada.jpg" alt="Smiley face"
-                  width="100%" height="500">
-          </div>
-      </div>
-  </div>
+    <ng-template #thenBlock>
+        <ng-template *ngIf="formu; then thenBlock2"></ng-template>
+        <ng-template #thenBlock2>
+            <div id="top-div-img">
+                <input type="file" (change)="onSelectedCover($event)" #photoInputCover style="display: none;">
+                <p (click)="photoInputCover.click()" class="change-img">SUBIR IMAGEN</p>
+                <img class="home-page-img" src="{{getUrl(about_us_cover)}}"
+                    alt="Recepcion" width="100%" height="400px">
+            </div>
+
+            <form [formGroup]="formu" id="content-info">
+                <div class="row">
+                    <div class="column">
+                        <input type="file" (change)="onSelectedImg1($event)" #photoInputImg1 style="display: none;">
+                        <p (click)="photoInputImg1.click()" class="change-img">SUBIR IMAGEN</p>
+                        <img class="home-page-img" appInputListener (onInput)="fixInput()" src="{{getUrl(about_us_img1)}}"
+                            alt="fachada" width="100%">
+                    </div>
+                    <div class="column">
+                        <div class="div-we">
+                            <p class=div-we-text>Mision</p>
+                        </div>
+                        <textarea appInputListener (onInput)="onInputText($event)"
+                        appInputOnlyListener (onInputOnly)="sendInfo($event)"
+                        formControlName="mission"
+                        class="text-area-we-info"></textarea>
+                        <div class="div-we">
+                            <p class="div-we-text">Vision</p>
+                        </div>
+                        <textarea appInputListener (onInput)="onInputText($event)"
+                        appInputOnlyListener (onInputOnly)="sendInfo($event)"
+                        formControlName="vision"
+                        class="text-area-we-info"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="div-we">
+                            <pre class="div-we-text">Nuestra historia</pre>
+                        </div>
+                        <textarea appInputListener (onInput)="onInputText($event)"
+                        appInputOnlyListener (onInputOnly)="sendInfo($event)"
+                        formControlName="history"
+                        class="text-area-we-info"></textarea>
+                    </div>
+                    <div class="column">
+                        <input type="file" (change)="onSelectedImg2($event)" #photoInputImg2 style="display: none;">
+                        <p (click)="photoInputImg2.click()" class="change-img">SUBIR IMAGEN</p>
+                        <img class="home-page-img" src="{{getUrl(about_us_img2)}}"
+                            alt="entrada" width="100%" height="500">
+                    </div>
+                </div>
+            </form>
+            <p class="last-change" *ngIf="last_change_time">{{last_change_time}}</p>
+        </ng-template>
+    </ng-template>
+
+    <ng-template #elseBlock>
+        <div style="width: 100%; margin-top: 20px">
+            <img class="home-page-img" src="{{getUrl(about_us_cover)}}"
+                alt="Recepcion" width="100%" height="400">
+        </div>
+
+        <div id="content-info">
+            <div class="row">
+                <div class="column">
+                    <img class="home-page-img" src="{{getUrl(about_us_img1)}}"
+                        alt="fachada" width="100%">
+                </div>
+                <div class="column">
+                    <div class="div-we">
+                        <p class=div-we-text>Mision</p>
+                    </div>
+                    <pre class="div-we-info">{{info.mission}}</pre>
+                    <div class="div-we">
+                        <p class="div-we-text">Vision</p>
+                    </div>
+                    <pre class="div-we-info">{{info.vision}}</pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="div-we">
+                        <pre class="div-we-text">Nuestra historia</pre>
+                    </div>
+                    <pre class="div-we-info">{{info.history}}</pre>
+                </div>
+                <div class="column">
+                    <img class="home-page-img" src="{{getUrl(about_us_img2)}}"
+                        alt="entrada" width="100%" height="500">
+                </div>
+            </div>
+        </div>
+    </ng-template>
 
 </div>

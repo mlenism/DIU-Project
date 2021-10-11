@@ -44,3 +44,98 @@ pre {
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
+
+.div-our-instalations {
+  width: 100%;
+  background: var(--color-caracteristico);
+  justify-self: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.our-instalations {
+  text-align: center;
+}
+
+.our-instalations-text {
+  margin: 20px;
+  color: white;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0%;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.home-page-img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.last-change {
+  position: fixed;
+  left: 11.4%;
+  background-color: #eaac3983;
+  padding: 0.5%;
+  color: #003f63e8;
+  margin-top: 0px;
+  top: 0%;
+  border-bottom-right-radius: 14px;
+}
+
+.change-img {
+  margin-top: 0%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 6vw;
+  color: #00000000;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.change-img:hover {
+  background: rgba(0,0,0,.5);
+  color: #acacac;
+}
+
+@media screen and (max-width: 768px) {
+  .our-instalations-text {
+    margin: 10px;
+    font-size: 1em;
+  }
+
+  .column{
+    width: 100%;
+    max-width: 100%;
+  }
+}

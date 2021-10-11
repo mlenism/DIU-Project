@@ -1,28 +1,15 @@
 .container {
-  background: url(assets/images/background.jpg) no-repeat;
+  background-color: #DBEBFF;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  max-width: 4000px;
-  background-size: cover;
-  min-height: 100%;
   margin: -0.5em;
 }
 
 #main-content {
-  background: white;
+  background-color: white;
   width: 77.1%;
   border-radius: 14px;
   height: auto;
   margin-top: 0.5em;
   margin-inline: 0.5em;
-}
-
-@media screen and (max-width: 540px) {
-
-  #main-content {
-    width: 100%;
-    height: auto;
-  }
 }

@@ -1,0 +1,107 @@
+<div class="content">
+    <div class="div-our-instalations">
+        <div class="our-instalations">
+            <p class="our-instalations-text">Reserva</p>
+        </div>
+    </div>
+
+    <div id="Reservation">
+        <form id="Reservation-data" [formGroup]="formu">
+            <div class="div-form">
+                <label class="form-text">Fecha de inicio</label>
+                <input type="date" id="data2" class="form-text-date" formControlName="startDate" (change)="checkForm()">
+            </div>
+            <div class="div-form">
+                <label class="form-text">Fecha de salida</label>
+                <input type="date" id="data4" class="form-text-date" formControlName="finishDate" (change)="checkForm()">
+            </div>
+            <div class="div-form">
+                <label class="form-text">Adultos</label>
+                <select class="form-text-data" formControlName="adults" (change)="checkForm()">
+                    <option value="1" selected="selected">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div class="div-form">
+                <label class="form-text">Niños</label>
+                <select class="form-text-data" formControlName="children" (change)="checkForm()">
+                    <option value="0" selected="selected">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="div-reservation">
+        <div class=".our-reservation">
+            <p class="our-reservation-text">Paquetes turisticos</p>
+        </div>
+    </div>
+
+    <div class="div-packs">
+        <p class="div-packs-text">2. Seleccione paquete turístico</p>
+    </div>
+
+    <div id="div-packs" *ngFor="let a of infoPacks">
+        <div (click)="onSelectPack($event, b)" class="div-card-tourist-pack" *ngFor="let b of a">
+            <figure>
+                <img class="home-page-img" src="{{getUrl(b.image_id)}}" width="100%" height="200">
+            </figure>
+            <p class="card-packs-text">{{b.name}}<p>
+        </div>
+    </div>
+
+    <div class="div-reservation" *ngIf="infoRooms.length">
+        <div class=".our-reservation">
+            <p class="our-reservation-text">Habitaciones</p>
+        </div>
+    </div>
+    <div class="div-packs" *ngIf="infoRooms.length">
+        <p class="div-packs-text">3. Seleccione habitación</p>
+        <p class="div-packs-text" style="text-align:center; color: rgb(0, 63, 99)">Recuerde que con su paquete turistico viene incluida una noche en el hotel</p>
+    </div>
+
+    <div id="div-packs" *ngFor="let a of infoRooms">
+        <div (click)="onSelectRoom($event, b)" class="div-card-pack" *ngFor="let b of a">
+            <figure>
+                <img class="home-page-img" src="{{getUrl(b.image_id)}}" width="100%" height="200">
+            </figure>
+            <p class="card-pack-text">Habitación: {{b.name}}<p>
+        </div>
+    </div>
+
+
+    <div class="div-reservation">
+        <div class=".our-reservation">
+            <p class="our-reservation-text">Resumen de la reserva</p>
+        </div>
+    </div>
+
+    <div id="div-confirm">
+        <div>
+            <p class= div-confirm-text>Paquete seleccionado: {{reserveInfo.pack}}</p>
+            <p class= div-confirm-text>Habitación seleccionada: {{reserveInfo.roomName}}</p>
+            <p class= div-confirm-text>Fecha de ingreso: {{reserveInfo.dateIn}}</p>
+            <p class= div-confirm-text>Fecha de salida: {{reserveInfo.dateOut}}</p>
+            <p class= div-confirm-text>Adultos: {{reserveInfo.adults}}</p>
+            <p class= div-confirm-text>Niños: {{reserveInfo.children}}</p>
+        </div>
+    </div>
+
+    <div id="div-button-confirm">
+        <button id="div-confirm-button" (click)="saveData()" [disabled]="!isReservationValid()">Confirmar reserva</button>
+    </div>
+    <p class="last-change" *ngIf="last_change_time">{{last_change_time}}</p>
+
+</div>

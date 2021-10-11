@@ -1,8 +1,10 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 dotenv.config();
 
+import LastImage from './services/LastImage';
 import homeR from './routes/HomeR';
 import planR from './routes/PlanR';
 import roomR from './routes/RoomR';
@@ -13,6 +15,7 @@ class Server {
     public app: Application;
 
     constructor() {
+        LastImage.uploadLastImage();
         this.app = express();
         this.config();
         this.routes();
@@ -24,6 +27,7 @@ class Server {
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
+        this.app.use(express.static(path.join(__dirname, 'public')));
     }
 
     routes(): void {

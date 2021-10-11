@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleLoginProvider, SocialUser, SocialAuthService } from "angularx-social-login";
 import { Router } from '@angular/router';
-import { TokenService } from '../../services/token.service';
-import { OauthService } from '../../services/oauth.service';
 
 @Component({
   selector: 'app-log',
@@ -16,21 +14,18 @@ export class LogComponent implements OnInit {
 
   constructor(
     private authService: SocialAuthService,
-    private router: Router,
-    private tokenService: TokenService,
-    private oauthService: OauthService
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      this.loggedIn = (user != null && this.tokenService.getToken() != null);
+      this.loggedIn = (user != null);
     })
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
-      this.tokenService.setToken(data.idToken)
       this.router.navigate(['']);
     }).catch(err => console.log(err));
   }

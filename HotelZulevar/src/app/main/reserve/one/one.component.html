@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="div-our-instalations">
+      <div class="our-instalations">
+          <p class="our-instalations-text">Sección de reservas</p>
+      </div>
+  </div>
+  <div id="div-date-info">
+      <p class="item">Reserva realizada el dia: {{info.timestamp}}</p>
+  </div>
+  <div id="div-full-info">
+      <p class="item">Código de factura: {{info.uuid}}</p>
+      <p class="item">Nombre completo: {{info.name}}</p>
+      <p class="item">Fecha de ingreso: {{info.entrance}}</p>
+      <p class="item">Fecha de salida: {{info.departure}}</p>
+      <p class="item">Cantidad de adultos: {{info.adults}}</p>
+      <p class="item">Cantidad de niños: {{info.children}}</p>
+      <p class="item">Habitación reservada: {{info.room}}</p>
+      <ng-template *ngIf="info.plan; then thenBlock else elseBlock"></ng-template>
+      <ng-template #thenBlock>
+        <p class="item">Plan turistico: {{info.plan}}</p>
+      </ng-template>
+      <ng-template #elseBlock>
+        <p class="item">Plan turistico: No aplica</p>
+      </ng-template>
+      <p class="item">Pago: {{info.cost}}</p>
+      <div id="div-button">
+          <a (click)="delete()">Eliminar reserva</a>
+      </div>
+  </div>
+  <div id="div-back-button">
+      <a routerLink="/reserva/details">Regresar</a>
+  </div>
+</div>

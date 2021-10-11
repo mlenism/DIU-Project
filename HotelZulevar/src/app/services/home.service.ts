@@ -15,4 +15,24 @@ export class HomeService {
   getFullInfo(): Observable<any> {
     return this.http.get(`${this.API_URI}`);
   }
+
+  getImg(id: string): Observable<any> {
+    return this.http.get(`${this.API_URI}/${id}`);
+  }
+
+  putImg(data: any): Observable<any> {
+    return this.http.put(`${this.API_URI}`, data, {responseType: 'text'});
+  }
+
+  putInfo(data: any): Observable<any> {
+    return this.http.post(`${this.API_URI}`, data, {responseType: 'text'});
+  }
+
+  putInfoFooter(data: any): Observable<any> {
+    return this.http.post(`${this.API_URI}/footer`, data, {responseType: 'text'});
+  }
+
+  putInfoAbout(data: any): Observable<any> {
+    return this.http.post(`${this.API_URI}/about`, data, {responseType: 'text'});
+  }
 }

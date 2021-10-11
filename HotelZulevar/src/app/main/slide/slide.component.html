@@ -1,23 +1,38 @@
 <div class="slideshow-container">
-  <div class="mySlides fade">
-      <img class="slide-img" src="assets/images/slides/frente.jpg"/>
-  </div>
+    <ng-template *ngIf="loggedIn; then thenBlock1"></ng-template>
+    <ng-template *ngIf="loggedIn; then thenBlock2"></ng-template>
+    <ng-template *ngIf="loggedIn; then thenBlock3"></ng-template>
+    <div class="mySlides fade">
+        <ng-template #thenBlock1>
+            <input type="file" (change)="onSelectedSlide1($event)" #photoInputSlide1 style="display: none;">
+            <p (click)="photoInputSlide1.click()" class="change-img">SUBIR IMAGEN</p>
+        </ng-template>
+        <img class="slide-img" src="{{getUrl(slide1)}}"/>
+    </div>
 
-  <div class="mySlides fade">
-      <img class="slide-img" src="assets/images/slides/balcon.jpg"/>
-  </div>
+    <div class="mySlides fade">
+        <ng-template #thenBlock2>
+            <input type="file" (change)="onSelectedSlide2($event)" #photoInputSlide2 style="display: none;">
+            <p (click)="photoInputSlide2.click()" class="change-img">SUBIR IMAGEN</p>
+        </ng-template>
+        <img class="slide-img" src="{{getUrl(slide2)}}"/>
+    </div>
 
-  <div class="mySlides fade">
-      <img class="slide-img" src="assets/images/slides/recepcion.jpg"/>
-  </div>
+    <div class="mySlides fade">
+        <ng-template #thenBlock3>
+            <input type="file" (change)="onSelectedSlide3($event)" #photoInputSlide3 style="display: none;">
+            <p (click)="photoInputSlide3.click()" class="change-img">SUBIR IMAGEN</p>
+        </ng-template>
+        <img class="slide-img" src="{{getUrl(slide3)}}"/>
+    </div>
 
-  <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
-  <a class="next" (click)="plusSlides(1)">&#10095;</a>
+    <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a class="next" (click)="plusSlides(1)">&#10095;</a>
 
-  <div class="dot-position">
-      <span class="dot" (click)="currentSlide(1)"></span>
-      <span class="dot" (click)="currentSlide(2)"></span>
-      <span class="dot" (click)="currentSlide(3)"></span>
-  </div>
+    <div class="dot-position">
+        <span class="dot" (click)="currentSlide(1)"></span>
+        <span class="dot" (click)="currentSlide(2)"></span>
+        <span class="dot" (click)="currentSlide(3)"></span>
+    </div>
 
 </div>

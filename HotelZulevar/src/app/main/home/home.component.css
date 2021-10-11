@@ -1,12 +1,4 @@
 /* =============================== CONTENT ===============================*/
-
-#content {
-  display:flex;
-  flex-direction: column;
-  width: 100%;
-  background: white;
-}
-
 #div-about-us {
   width: 50%;
   background: var(--color-caracteristico);
@@ -76,6 +68,7 @@
   -moz-border-radius-bottomright: 14px;
   border-top-right-radius: 14px;
   border-bottom-right-radius: 14px;
+  margin-left: -60%;
 }
 
 #divisor-google-maps {

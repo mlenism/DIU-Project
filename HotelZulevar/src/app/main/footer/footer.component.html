@@ -1,33 +1,48 @@
 <footer class="footer">
-  <div class="footer-group">
-      <div class="footer-item-list">
-          <p class="item-p">Ubicacion</p>
-          <p class="item-p">Carrera 8 No. 10-13<br>
-              Calima - El Darién<br>
-              Valle del Cauca, Colombia</p>
-      </div>
-  </div>
-  <div class="footer-group">
-      <div class="footer-item-list">
-          <p class="item-p">Siguenos</p>
-          <ul class="footer-ul">
-              <li>
-                  <a href="#" class="fa fa-facebook icon-size" style="color:#003F63;"></a>
-              </li>
-              <li>
-                  <a href="#" class="fa fa-instagram icon-size" style="color:#D3A13D;"></a>
-              </li>
-              <li>
-                  <a href="#" class="fa fa-whatsapp icon-size" style="color:#003F63;"></a>
-              </li>
-          </ul>
-      </div>
-  </div>
-  <div class="footer-group">
-      <div class="footer-item-list">
-          <p class="item-p">Contacto</p>
-          <textarea *ngIf="loggedIn" appInputListener (onInput)="onInputText($event)" class="text-area-we-info-footer">{{info.contact}}</textarea>
-          <pre *ngIf="!loggedIn" class="item-p">{{info.contact}}</pre>
-      </div>
-  </div>
+    <div class="footer-group">
+        <div class="footer-item-list">
+            <p class="item-p">Ubicacion</p>
+            <p class="item-p">Carrera 8 No. 10-13<br>
+                Calima - El Darién<br>
+                Valle del Cauca, Colombia</p>
+        </div>
+    </div>
+    <div class="footer-group">
+        <div class="footer-item-list">
+            <p class="item-p">Siguenos</p>
+            <ul class="footer-ul">
+                <li>
+                    <a href="https://www.facebook.com/Hotel-Zulevar-255865721093077" class="fa fa-facebook icon-size" style="color:#003F63;"></a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/zulevarhotel?utm_medium=copy_link" class="fa fa-instagram icon-size" style="color:#003F63;"></a>
+                </li>
+                <li>
+                    <a href="https://wa.me/573176819481" class="fa fa-whatsapp icon-size" style="color:#003F63;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-group">
+        <ng-template *ngIf="loggedIn; then thenBlock else elseBlock"></ng-template>
+        <ng-template #thenBlock>
+            <ng-template *ngIf="formu; then thenBlock2"></ng-template>
+            <ng-template #thenBlock2>
+                <p class="last-change" *ngIf="last_change_time">{{last_change_time}}</p>
+                <form [formGroup]="formu" class="footer-item-list">
+                    <p class="item-p">Contacto</p>
+                    <textarea appInputListener (onInput)="onInputText($event)"
+                    formControlName="contact"
+                    appInputOnlyListener (onInputOnly)="sendInfo($event)"
+                    class="text-area-we-info-footer"></textarea>
+                </form>
+            </ng-template>
+        </ng-template>
+        <ng-template #elseBlock>
+            <div class="footer-item-list">
+                <p class="item-p">Contacto</p>
+                <pre class="item-p">{{info.contact}}</pre>
+            </div>
+        </ng-template>
+    </div>
 </footer>

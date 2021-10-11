@@ -1,52 +1,68 @@
-<div id="content">
-    <div id="div-our-instalations">
-        <div id="our-instalations">
-            <p id="our-instalations-text">Habitaciones</p>
+<div class="content">
+    <div class="div-our-instalations">
+        <div class="our-instalations">
+            <p class="our-instalations-text">Habitaciones</p>
         </div>
     </div>
 
     <ng-template *ngIf="loggedIn; then thenBlock else elseBlock"></ng-template>
 
     <ng-template #thenBlock>
-        <ng-template *ngIf="form; then thenBlock2"></ng-template>
+        <ng-template *ngIf="formu; then thenBlock2"></ng-template>
         <ng-template #thenBlock2>
-            <form [formGroup]="form" style="display: contents;">
+            <form [formGroup]="formu" style="display: contents;">
                 <a (click)="addItem()" class="room-button-info create-room-button">Crear Habitaciones</a>
-                <div #cards formArrayName="items" *ngFor="let e of form.value.items; let i = index ; let last = last; trackBy:trackByIndex" class="div-room">
+                <div #cards formArrayName="items" *ngFor="let e of formu.value.items; let i = index ; let last = last; trackBy:trackByIndex" class="div-room">
                     <div class="room-img">
-                        <img class="home-page-img" src="{{e.image}}" width="100%" height="200px">
+                        <input type="file" (change)="onSelectedImg($event, e)" #photoInput style="display: none;">
+                        <p (click)="photoInput.click()" class="change-img">SUBIR IMAGEN</p>
+                        <img class="home-page-img" appInputListener (onInput)="fixInput()" src="{{e.image}}" width="100%" height="200px">
                     </div>
                     <div id="div-line"> </div>
                     <div class="room-info" [formGroupName]="i">
                         <div class="row">
                             <p class="room-info-text no-bottom">Habitación:</p>
-                            <input formControlName="name" type="text" class="text-area-we-info no-margin no-bottom less-width-x2">
+                            <input formControlName="name" type="text"
+                            appInputOnlyListener (onInputOnly)="sendInfo($event, i)"
+                            class="text-area-we-info no-margin no-bottom less-width-x2">
                         </div>
                         <div class="row">
                             <p class="room-info-text no-bottom">costo:</p>
-                            <input formControlName="cost" type="text" class="text-area-we-info no-margin no-bottom less-width-x2">
+                            <input formControlName="cost"
+                            type="text" appInputOnlyListener (onInputOnly)="sendInfo($event, i)"
+                            class="text-area-we-info no-margin no-bottom less-width-x2">
                         </div>
                         <div class="row">
                             <p class="room-info-text no-bottom">Adultos:</p>
-                            <input formControlName="adults" appInputListener (onInput)="restartText($event)" type="text" class="text-area-we-info no-margin no-bottom less-width-x1">
+                            <input formControlName="adults"
+                            appInputOnlyListener (onInputOnly)="sendInfo($event, i)"
+                            appInputListener (onInput)="restartText($event)" type="text"
+                            class="text-area-we-info no-margin no-bottom less-width-x1">
                             &emsp;&nbsp;&nbsp;
                             <p class="room-info-text no-bottom">Niños:</p>
-                            <input formControlName="children" appInputListener (onInput)="restartText($event)" type="text" class="text-area-we-info no-margin no-bottom less-width-x1">
+                            <input formControlName="children"
+                            appInputOnlyListener (onInputOnly)="sendInfo($event, i)"
+                            appInputListener (onInput)="restartText($event)" type="text"
+                            class="text-area-we-info no-margin no-bottom less-width-x1">
                         </div>
-                        <textarea formControlName="description" appInputListener (onInput)="onInputText($event)" class="text-area-we-info more-width"></textarea>
+                        <textarea formControlName="description"
+                        appInputOnlyListener (onInputOnly)="sendInfo($event, i)"
+                        appInputListener (onInput)="onInputText($event)"
+                        class="text-area-we-info more-width"></textarea>
                     </div>
                     <div class="room-button">
                         <a (click)="delete(i)" class="room-button-info erase">BORRAR</a>
                     </div>
                 </div>
             </form>
+            <p class="last-change" *ngIf="last_change_time">{{last_change_time}}</p>
         </ng-template>
     </ng-template>
 
     <ng-template #elseBlock>
-        <div #cards  *ngFor="let e of info; let last = last" class="div-room">
+        <div #cards *ngFor="let e of info; let last = last" class="div-room">
             <div class="room-img">
-                <img class="home-page-img" src="{{e.image}}" width="100%" height="200px">
+                <img class="home-page-img" src="{{getUrl(e.image_id)}}" width="100%" height="200px">
             </div>
             <div id="div-line"> </div>
             <div class="room-info">
@@ -66,9 +82,6 @@
                     <p class="room-info-text no-margin no-bottom">{{e.children}}</p>
                 </div>
                 <pre class="room-info-text more-width">{{e.description}}</pre>
-            </div>
-            <div class="room-button">
-                <a (click)="confirm(e.name)" class="room-button-info">RESERVA AHORA</a>
             </div>
         </div>
     </ng-template>

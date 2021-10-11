@@ -1,0 +1,374 @@
+#Reservation {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+#Reservation-data {
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  margin-top: 2%;
+  -webkit-box-shadow: 0px 7px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 7px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.div-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  width: 20%;
+}
+
+.form-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6vw;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  width: 100%;
+}
+
+.form-text-data,
+.form-text-date {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1vw;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  height: 3em;
+}
+
+.form-text-data {
+  width: 100%;
+}
+
+.pack-card {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.div-packs {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.div-pack-text {
+  text-align: left;
+}
+
+#div-packs {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.div-card-pack {
+  background: #c4c4c4;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  margin-left: 5%;
+  -webkit-box-shadow: -1px 4px 15px -3px #000000;
+  box-shadow: -1px 4px 15px -3px #000000;
+}
+
+.div-card-pack:hover {
+  -webkit-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  -moz-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  -o-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  width: 500px;
+}
+
+.div-card-pack:active {
+  -webkit-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  -moz-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  -o-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  background-color: #003f63;
+  width: 500px;
+}
+
+.div-card-pack:active .card-packs-text,
+.div-card-pack:active .card-pack-text {
+  color: white;
+}
+
+.card-packs-text,
+.card-pack-text {
+  text-align: center;
+}
+
+.div-reservation {
+  width: 80%;
+  background: #eaad39;
+  justify-self: center;
+  margin-bottom: 2%;
+}
+
+.our-reservation-text {
+  text-align: center;
+  margin: 20px;
+  color: rgb(0, 63, 99);
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+#div-confirm {
+  background: rgb(0, 63, 99);
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+.div-confirm-text {
+  color: white;
+  padding-left: 5%;
+}
+
+#div-button-confirm {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.div-packs {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.div-pack-text {
+  text-align: left;
+}
+
+#div-packs {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.div-card-tourist-pack,
+.div-card-pack {
+  background: #c4c4c4;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  margin-left: 5%;
+  -webkit-box-shadow: -1px 4px 15px -3px #000000;
+  box-shadow: -1px 4px 15px -3px #000000;
+}
+
+.div-card-tourist-pack:hover,
+.div-card-pack:hover {
+  -webkit-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  -moz-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  -o-transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  transition: all 0.4s 0s ease-in, box-shadow 0.3s 0s ease;
+  width: 500px;
+}
+
+.div-card-tourist-pack:active,
+.div-card-pack:active {
+  -webkit-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  -moz-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  -o-transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  transition: all 0.2s 0s ease-in, box-shadow 0.3s 0s ease;
+  background: #003f63;
+  width: 500px;
+}
+
+.div-card-tourist-pack:active,
+.div-card-pack:active .card-packs-text,
+.div-card-pack:active .card-pack-text {
+  color: white;
+}
+
+.card-packs-text,
+.card-pack-text {
+  text-align: center;
+}
+
+.div-reservation {
+  width: 80%;
+  background: #eaad39;
+  justify-self: center;
+  margin-bottom: 2%;
+}
+
+.our-reservation-text {
+  text-align: center;
+  margin: 20px;
+  color: rgb(0, 63, 99);
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+#div-confirm {
+  background: rgb(0, 63, 99);
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+.div-confirm-text {
+  color: white;
+  padding-left: 5%;
+}
+
+#div-button-confirm {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+#div-confirm-button {
+  border: none;
+  text-decoration: none;
+  color: rgb(0, 63, 99);
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  width: 35%;
+  background: #eaad39;
+  text-align: center;
+  padding: 2%;
+  -webkit-box-shadow: -1px 4px 15px -3px #000000;
+  box-shadow: -1px 4px 15px -3px #000000;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+#div-confirm-button:hover {
+  -webkit-transition: all 0.2s 0s ease, box-shadow 0.3s 0s ease;
+  -moz-transition: all 0.2s 0s ease, box-shadow 0.3s 0s ease;
+  -o-transition: all 0.2s 0s ease, box-shadow 0.3s 0s ease;
+  transition: all 0.2s 0s ease, wid 0.3s 0s ease;
+  width: 40%
+}
+
+#div-confirm-button[disabled] {
+  background-color: #eaac397c;
+  color: rgb(0, 63, 99, .7);
+  cursor: unset;
+}
+
+#div-confirm-button:active {
+  -webkit-box-shadow: -1px 3px 15px -8px #000000;
+  box-shadow: -1px 3px 15px -8px #000000;
+  width: 39%;
+  background: #e4a738;
+}
+
+@media screen and (max-width: 768px) {
+  #Reservation {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  #Reservation-data {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .div-form {
+    height: auto;
+  }
+
+  .form-text {
+    margin: 5%;
+    width: 320%;
+    margin-left: -110%;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .form-text-data,
+  .form-text-date {
+    font-size: 100%;
+    height: auto;
+    align-self: center;
+    width: 320%;
+  }
+
+  .pack-card {
+    width: 100%;
+  }
+
+  .our-reservation-text {
+    font-size: 20px;
+  }
+
+  .div-packs-text {
+    font-size: 20px;
+  }
+
+  #Reservation {
+    width: 80%;
+  }
+
+  #div-packs {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div-card-tourist-pack,
+  .div-card-pack {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .card-packs-text,
+  .card-pack-text {
+    font-size: 20px;
+  }
+
+  .div-confirm-text {
+    font-size: 20px;
+  }
+
+  #div-button-confirm {
+    width: 100%;
+  }
+
+  #div-confirm-button {
+    width: 40%;
+    font-size: 20px;
+  }
+
+  .item-p {
+    font-size: 20px;
+  }
+}

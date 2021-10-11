@@ -1,5 +1,14 @@
 /* ================================ FOOTER ================================ */
 
+.last-change {
+  margin-top: unset;
+  top: unset;
+  border-bottom-right-radius: unset;
+  margin-bottom: 0px;
+  bottom: 0%;
+  border-top-right-radius: 14px;
+}
+
 .footer {
   left: 0;
   bottom: 0;
